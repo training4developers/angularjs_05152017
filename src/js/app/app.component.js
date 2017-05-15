@@ -1,10 +1,15 @@
-import { componentHelper } from './utils/component';
+// import { componentHelper } from './utils/component';
 
-class AppComponent {
-    message = 'Hello World!';
+function AppComponent() {
+    this.message = 'Hello World!';
 }
 
-export const appComponent = [ 'main', componentHelper({
-    templateUrl: 'app/app.component.html',
-    controller: AppComponent,
-}) ];
+export var appComponent = [ 'main', function() {
+    
+    return {
+        restrict: 'E',
+        templateUrl: 'app/app.component.html',
+        controller: AppComponent,
+        controllerAs: '$ctrl',
+    };
+} ];

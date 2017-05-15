@@ -1,19 +1,22 @@
-export const componentHelper = (componentOptions) => {
+export var componentHelper = function(componentOptions) {
 
-    const componentDefaults = {
+    var componentDefaults = {
         restrict: 'E',
         scope: {},
-        controller: class { },
+        controller: function () { },
         controllerAs: '$ctrl',
         bindToController: true,
-        link: (...params) => {
+        link: function(scope, element, attrs, ctrls, transclude) {
 
             if (typeof componentOptions.$postLink === 'function') {
-                componentOptions.$postLink(...params);
+                componentOptions
+                    .$postLink(scope, element, attrs, ctrls, transclude);
             }
 
         },
     };
 
-    return () => angular.extend({}, componentDefaults, componentOptions);
+    return function() {
+        return angular.extend({}, componentDefaults, componentOptions);
+    };
 };

@@ -11,6 +11,7 @@ export var toolHeaderComponent = [ 'toolHeader', function() {
         controllerAs: '$ctrl',
         bindToController: true,
         scope: {
+            // input binding
             headerText: '=myHeaderText',
         },
     };

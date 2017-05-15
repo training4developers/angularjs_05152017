@@ -11,6 +11,7 @@ export var colorFormComponent = [ 'colorForm', function() {
         controllerAs: '$ctrl',
         bindToController: true,
         scope: {
+            // output binding
             submitColor: '&',
         },
     };

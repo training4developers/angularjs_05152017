@@ -17,6 +17,13 @@ export var componentHelper = function(componentOptions) {
     };
 
     return function() {
-        return angular.extend({}, componentDefaults, componentOptions);
+        var dirDef = angular.extend({}, componentDefaults, componentOptions);
+
+        if (dirDef.bindings) {
+            dirDef.scope = dirDef.bindings;
+            delete dirDef.bindings;
+        }
+        
+        return dirDef;
     };
 };

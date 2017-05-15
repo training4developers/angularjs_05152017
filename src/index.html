@@ -8,9 +8,27 @@
   </head>
   <body>
     <main>Loading...
-
-      <app-comp></app-comp>
-
     </main>
+    <script>
+
+        'use strict';
+
+        function doIt() {
+            console.log(this);
+        }
+
+        doIt();
+        window.doIt();
+
+        var o = {
+            id: 2,
+            doIt: doIt,
+        };
+
+        o.doIt();
+
+        console.log(doIt === o.doIt);
+
+    </script>
   </body>
 </html>

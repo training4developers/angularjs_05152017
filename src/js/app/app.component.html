@@ -1,11 +1,5 @@
 <tool-header my-header-text="$ctrl.headerText"></tool-header>
-<ul>
-    <li ng-repeat="color in $ctrl.sortedColors()">{{color}}</li>
-</ul>
-<form>
-    <div>
-        <label for="new-color-input">New Color</label>
-        <input type="text" id="new-color-input" ng-model="$ctrl.newColor">
-    </div>
-    <button type="button" ng-click="$ctrl.addColor()">Add Color</button>
-</form>
+<unordered-list items="$ctrl.sortedColors()"></unordered-list>
+<unordered-list items="$ctrl.countries"></unordered-list>
+<color-form submit-color="$ctrl.addColor(largestCountryInTheWorldByLandArea)"></color-form>
+

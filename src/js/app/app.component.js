@@ -5,13 +5,14 @@ function AppComponent($scope) {
     var vm = this;
 
     vm.headerText = 'Matthew Rocks!';
-    vm.newColor = '';
 
     vm.lastColors = null;
     vm.colors = [ 'black', 'white', 'red', 'green', 'saffron', 'blue' ];
 
-    vm.addColor = function() {
-        vm.colors = vm.colors.concat(vm.newColor);    
+    vm.countries = [ 'Russia', 'Egypt', 'India', 'Texas', 'United States'];
+
+    vm.addColor = function(newColor) {
+        vm.colors = vm.colors.concat(newColor);    
     };
 
     vm.sortedColors = function() {

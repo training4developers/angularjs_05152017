@@ -1,15 +1,12 @@
 <h1>{{$ctrl.message}}</h1>
 
 <ul>
-    <li ng-repeat="color in $ctrl.colors">{{color}}</li>
+    <li ng-repeat="color in $ctrl.sortedColors()">{{color}}</li>
 </ul>
 <form>
-
     <div>
         <label for="new-color-input">New Color</label>
         <input type="text" id="new-color-input" ng-model="$ctrl.newColor">
     </div>
-
     <button type="button" ng-click="$ctrl.addColor()">Add Color</button>
-
 </form>

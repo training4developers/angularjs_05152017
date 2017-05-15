@@ -1,13 +1,6 @@
 import { appComponent } from './app.component';
+import { toolHeaderComponent } from './components/tool-header/tool-header.component';
 
 export var appModule = angular.module('App', [])
-    .filter('mySort', function() {
-    
-        return function(list) {
-            console.log('doing list sort');
-            list.sort();
-            return list;
-        };
-
-    })
-    .directive(appComponent[0], appComponent[1]);
+    .directive(appComponent[0], appComponent[1])
+    .directive(toolHeaderComponent[0], toolHeaderComponent[1]);

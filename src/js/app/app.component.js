@@ -1,13 +1,10 @@
 // import { componentHelper } from './utils/component';
 
-
-// black, white, red, green, saffron, blue
-
 function AppComponent($scope) {
 
     var vm = this;
 
-    vm.message = 'Hello World!';
+    vm.headerText = 'Matthew Rocks!';
     vm.newColor = '';
 
     vm.lastColors = null;
@@ -27,9 +24,6 @@ function AppComponent($scope) {
         return vm.colors;
     };
 
-    $scope.$watch(function() {
-        console.log('running change detection (digest loop)');
-    });
 }
 
 export var appComponent = [ 'main', function() {

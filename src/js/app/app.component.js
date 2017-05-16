@@ -1,24 +1,20 @@
-// import { componentHelper } from './utils/component';
+import { componentHelper } from './utils/component';
 
-function AppComponent($scope) {
+function AppComponent() {
 
     var vm = this;
 
-    vm.headerText = 'Matthew Rocks!';
+    vm.headerText = 'Color Tool';
 
     vm.lastColors = null;
     vm.colors = [ 'black', 'white', 'red', 'green', 'saffron', 'blue' ];
-
-    vm.countries = [ 'Russia', 'Egypt', 'India', 'Texas', 'United States'];
 
     vm.addColor = function(newColor) {
         vm.colors = vm.colors.concat(newColor);    
     };
 
     vm.sortedColors = function() {
-        console.log('get sorted colors');
         if (vm.colors !== vm.lastColors) {
-            console.log('sorting colors');
             vm.colors.sort();
             vm.lastColors = vm.colors;
         }
@@ -27,12 +23,7 @@ function AppComponent($scope) {
 
 }
 
-export var appComponent = [ 'main', function() {
-    
-    return {
-        restrict: 'E',
-        templateUrl: 'app/app.component.html',
-        controller: AppComponent,
-        controllerAs: '$ctrl',
-    };
-} ];
+export var appComponent = [ 'main', componentHelper({
+    templateUrl: 'app/app.component.html',
+    controller: AppComponent,
+}) ];

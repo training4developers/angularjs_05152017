@@ -1,19 +1,9 @@
+import { componentHelper } from '../../utils/component';
 
-
-export var colorFormComponent = [ 'colorForm', function() {
-
-    // directive definition object
-    return {
-
-        restrict: 'E',
-        template: require('./color-form.component.html'),
-        controller: function() { },
-        controllerAs: '$ctrl',
-        bindToController: true,
-        scope: {
-            // output binding
-            submitColor: '&',
-        },
-    };
-
-} ];
+export var colorFormComponent = [ 'colorForm', componentHelper({
+    template: require('./color-form.component.html'),
+    bindings: {
+        // output binding
+        submitColor: '&',
+    },
+}) ];

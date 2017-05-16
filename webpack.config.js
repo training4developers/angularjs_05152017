@@ -47,16 +47,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: [/node_modules/, /\.(spec|e2e)\.js$/],
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['latest'],
-                            plugins: ['transform-class-properties'],
-                        }
-                    },
-                    'angular-template-url-loader',
-                ],
+                use: [ 'angular-template-url-loader' ],
             },
             // processes HTML files into JavaScript files
             // useful for bundling HTML with Angular Component

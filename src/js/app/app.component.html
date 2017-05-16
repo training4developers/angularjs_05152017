@@ -1,4 +1,6 @@
-<tool-header my-header-text="$ctrl.headerText"></tool-header>
-<unordered-list items="$ctrl.sortedColors()"></unordered-list>
+<tool-header small-text=" 'Best Tool in the World!' ">
+    <h1>{{$ctrl.headerText}}</h1>
+</tool-header>
+<unordered-list items="$ctrl.colors"></unordered-list>
 <color-form submit-color="$ctrl.addColor(color)"></color-form>
 

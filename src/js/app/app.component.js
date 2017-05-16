@@ -6,20 +6,20 @@ function AppComponent() {
 
     vm.headerText = 'Color Tool';
 
-    vm.lastColors = null;
+    // vm.lastColors = null;
     vm.colors = [ 'black', 'white', 'red', 'green', 'saffron', 'blue' ];
 
     vm.addColor = function(newColor) {
         vm.colors = vm.colors.concat(newColor);    
     };
 
-    vm.sortedColors = function() {
-        if (vm.colors !== vm.lastColors) {
-            vm.colors.sort();
-            vm.lastColors = vm.colors;
-        }
-        return vm.colors;
-    };
+    // vm.sortedColors = function() {
+    //     if (vm.colors !== vm.lastColors) {
+    //         vm.colors.sort();
+    //         vm.lastColors = vm.colors;
+    //     }
+    //     return vm.colors;
+    // };
 
 }
 

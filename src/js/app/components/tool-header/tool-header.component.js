@@ -1,9 +1,12 @@
 import { componentHelper } from '../../utils/component';
 
 export var toolHeaderComponent = [ 'toolHeader', componentHelper({
+    transclude: true,
     template: require('./tool-header.component.html'),
     bindings: {
-        // input binding
-        headerText: '=myHeaderText',
+        smallText: '=',
     },
+    controller: function() {
+        this.headerText = 'This is fun!';
+    }
 }) ];

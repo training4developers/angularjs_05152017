@@ -1,3 +1,13 @@
+
+// creates a module which provides
+export var createModule = function(moduleName, moduleDependencies) {
+    var module = angular.module(moduleName, moduleDependencies);
+    module.component = function(componentName, componentOptions) {
+        return this.directive(componentName, componentHelper(componentOptions));
+    };
+    return module;
+};
+
 export var componentHelper = function(componentOptions) {
 
     var componentDefaults = {

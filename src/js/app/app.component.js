@@ -32,7 +32,7 @@ function AppComponent(colorsSvc) {
 
 }
 
-export var appComponent = [ 'main', componentHelper({
+export var appComponent = [ 'main', {
     templateUrl: 'app/app.component.html',
     controller: AppComponent,
-}) ];
+} ];

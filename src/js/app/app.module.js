@@ -1,3 +1,4 @@
+import { createModule } from './utils/component';
 
 import { colorsService } from './services/colors.service';
 import { appComponent } from './app.component';
@@ -13,8 +14,7 @@ function Config(baseURL) {
 //     this.baseURL = 'http://localhost:3010';
 // }
 
-export var appModule = angular.module('App', [])
-
+export var appModule = createModule('App', [])
     .constant('baseURL', 'http://localhost:3010')
     // .value('config', new Config('http://localhost:3010'))
     // when I need to have logic to help instantiate
@@ -53,7 +53,7 @@ export var appModule = angular.module('App', [])
 
     })
     .service(colorsService[0], colorsService[1])
-    .directive(appComponent[0], appComponent[1])
+    .component(appComponent[0], appComponent[1])
     .directive(toolHeaderComponent[0], toolHeaderComponent[1])
     .directive(unorderedListComponent[0], unorderedListComponent[1])
     .directive(colorFormComponent[0], colorFormComponent[1]);

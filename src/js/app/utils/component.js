@@ -1,5 +1,5 @@
 
-// creates a module which provides
+// creates a module which provides component API function
 export var createModule = function(moduleName, moduleDependencies) {
     var module = angular.module(moduleName, moduleDependencies);
     module.component = function(componentName, componentOptions) {
@@ -8,6 +8,7 @@ export var createModule = function(moduleName, moduleDependencies) {
     return module;
 };
 
+// provides a function which performs a mixin for components
 export var componentHelper = function(componentOptions) {
 
     var componentDefaults = {
